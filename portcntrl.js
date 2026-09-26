@@ -9,7 +9,6 @@ const modal = document.querySelector('.modal');
 const modalContent = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
 const projectButtons = document.querySelectorAll('.project-link');
-const contactForm = document.querySelector('.contact-form');
 
 function syncProjectCards() {
   const cards = document.querySelectorAll('.project-card');
@@ -174,17 +173,3 @@ window.addEventListener('keydown', (event) => {
   }
 });
 
-contactForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const button = contactForm.querySelector('button[type="submit"]');
-  const originalText = button.textContent;
-
-  button.textContent = 'Message sent';
-  button.disabled = true;
-
-  setTimeout(() => {
-    button.textContent = originalText;
-    button.disabled = false;
-    contactForm.reset();
-  }, 1800);
-});
